@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Films</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="header_container">
+      <div class="header">
+        <nav>
+          <a href="#">Главная</a>
+          <a href="./favorites.html">Избранное</a>
+        </nav>
+      </div>
+      <div class="text_wrapper">
+        <div class="header_text">
+          <h1>Одна подписка - весь контент</h1>
+          <p>
+            Собрали всё самое интересное в одном месте. Главные сериалы года,
+            новинки кинопроката и любимые мультфильмы.
+          </p>
+          <button>Попробовать бесплатно на 7 дней</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="modal">
+        <div class="modal_content">
+          <img id="film_poster" />
+          <img src="./img/heart_icon.svg" id="heart_icon" class="heart_icon" />
+          <div class="film_info">
+            <p id="film_name"></p>
+            <span id="year"></span>
+            <span id="country"></span>
+            <p id="genres"></p>
+            <span id="duration"></span>
+            <span id="date"></span>
+          </div>
+        </div>
+      </div>
+      <h2 class="new_films">60 НОВИНОК</h2>
+      <div class="films_wrapper"></div>
+    </div>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

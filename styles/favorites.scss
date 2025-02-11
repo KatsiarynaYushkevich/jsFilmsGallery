@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$main_text_color: #fff;
+$sub_text_color: #333333;
+$main_font_family: Montserrat;
+
+@mixin main_text_style(
+  $f_size: 24px,
+  $f_weight: 400,
+  $color: $main_text_color
+) {
+  font-family: $main_font_family;
+  color: $color;
+  font-size: $f_size;
+  font-weight: $f_weight;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background-color: rgba(27, 30, 34, 1);
+    min-height: 200px;
+
+}
+
+.header_wrapper{
+    max-width: 80%;   
+     margin: auto;
+}
+
+.header_nav{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    a{
+        @include main_text_style(24px, 400, #fff);
+        text-decoration: none;
+    }
+}
+
+h1{  
+    @include main_text_style(50px, 600, #fff);
+    margin-bottom: 20px;
+}
+
+.films_wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 360px);
+    gap: 15px;
+    width: 80%;
+    margin: auto;
+}
+
+.film{
+    position: relative;
+    img{
+        border-radius: 10px;
+
+    }
+}
+
+.film_img {
+    width: 100%;
+    height: 100%;
+  }
+.film:hover {
+    transform: scale(1.05);
+    transition: 0.3s linear;
+    cursor: pointer;
+  }
+
+  .film_description {
+    @include main_text_style();
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    row-gap: 10px;
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    transition: opacity 0.4s linear;
+    padding: 20px;
+  }
+
+  .film_name {
+    flex-grow: 1;
+  }
+  .film_description:hover {
+    opacity: 1;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .modal_content {
+    margin: 10px auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    border: 3px solid white;
+    width: 80%;
+    display: flex;
+    column-gap: 20px;
+    border-radius: 5px;
+    position: relative;
+  
+    #film_poster {
+      max-height: 97vh;
+      border-radius: 3px;
+    }
+  }
+  
+  .film_info {
+    flex-grow: 1;
+    @include main_text_style(36px, 400, #fff);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: center;
+  }
